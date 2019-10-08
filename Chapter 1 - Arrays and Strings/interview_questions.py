@@ -18,7 +18,7 @@ def isUnique1(string):
             chars[char] = 1
     return True
 
-# Implementation 1
+# Implementation 2
 # Runtime: O(N)
 # Space Complexity: O(1) (maxes at 26 bits)
 def isUnique2(string):
