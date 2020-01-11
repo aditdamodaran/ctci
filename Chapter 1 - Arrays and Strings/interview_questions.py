@@ -37,6 +37,36 @@ def isUnique2(string):
         # print("TRUE",'{:026b}'.format(checker))
     return True
 
+"""
+1.2 Check Permutation: 
+Given two strings,write a method to decide if 
+one is a permutation of the other.
+"""
+# Implementation 1
+# Runtime: If length of STR1 is A, and length of STR2 is B, and # of Unique CHARS is M: O(MAB)
+# Space Complexity: O(M)
+def isPermutation1(str1, str2):
+    """Uses Hash Table to check character frequencies"""
+    chars1 = {}
+    for char in str1:
+        if (char in chars1.keys()):
+            chars1[char] += 1
+        else:
+            chars1[char] = 1
+    print(chars1)
+    for char in str2:
+        if (char in chars1.keys()):
+            chars1[char] -= 1
+        else:
+            return False
+    print(chars1)
+    if (sum(chars1.values()) == 0):
+        return True
+    else:
+        return False
+
+# print(isPermutation1('abcdee', 'cbeade'))
+# print(isPermutation1('apdsfinapsidfnaspoinfpaosinfopsin', 'aaaaddffffiiiiinnnnnooopppppsssss'))
 
 
 
