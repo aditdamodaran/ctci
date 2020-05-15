@@ -7,7 +7,8 @@ characters. What if you cannot use additional data structures?
 # Implementation 1
 # Runtime: O(N^2)
 # Space Complexity: O(N) (maxes at # of unique chars)
-def isUnique1(string):
+def isUnique1(args):
+    string = args
     """ Use a hash table / dictionary to check for unique
     characters """
     chars = {}
@@ -21,7 +22,8 @@ def isUnique1(string):
 # Implementation 2
 # Runtime: O(N)
 # Space Complexity: O(1) (maxes at 26 bits)
-def isUnique2(string):
+def isUnique2(args):
+    string = args
     """Use 26 bits of an INT32 to check for duplicates --
     makes the assumption of using 26 letters of the alphabet
     and also case-insensitive"""
@@ -45,7 +47,8 @@ one is a permutation of the other.
 # Implementation 1
 # Runtime: If length of STR1 is A, and length of STR2 is B, and # of Unique CHARS is M: O(MAB)
 # Space Complexity: O(M)
-def isPermutation1(str1, str2):
+def isPermutation1(args):
+    str1, str2 = args
     """Uses Hash Table to check character frequencies"""
     chars1 = {}
     for char in str1:
@@ -53,13 +56,13 @@ def isPermutation1(str1, str2):
             chars1[char] += 1
         else:
             chars1[char] = 1
-    print(chars1)
+    # print(chars1)
     for char in str2:
         if (char in chars1.keys()):
             chars1[char] -= 1
         else:
             return False
-    print(chars1)
+    # print(chars1)
     if (sum(chars1.values()) == 0):
         return True
     else:
