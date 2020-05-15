@@ -24,7 +24,6 @@ def URLify1(args):
 
     # Starting from the string's end, 
     # shift characters as calculated
-
     shift = countSpaces*2
     idxsRev = list(range(0,length))[::-1]
 
