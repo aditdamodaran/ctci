@@ -4,7 +4,8 @@ Implement an algorithm to determine if a string has all unique
 characters. What if you cannot use additional data structures?
 """
 
-# Implementation 1
+# Implementation 1 (Naive)
+# Description: Use Hashtable ot Check for Unique Characters
 # Runtime: O(N^2)
 # Space Complexity: O(N) (maxes at # of unique chars)
 def isUnique1(args):
@@ -19,7 +20,9 @@ def isUnique1(args):
             chars[char] = 1
     return True
 
-# Implementation 2
+# Implementation 2 (Bit Manip.)
+# Description: Use a bitmap (length n for n unique characters) with 0 or 1 values for unique chars.
+# ...if a character encounters a value already set to 1, the string is not unique.
 # Runtime: O(N)
 # Space Complexity: O(1) (maxes at 26 bits)
 def isUnique2(args):
@@ -38,41 +41,3 @@ def isUnique2(args):
         # print("TRUE",'{:026b}'.format(1 << val))
         # print("TRUE",'{:026b}'.format(checker))
     return True
-
-"""
-1.2 Check Permutation: 
-Given two strings,write a method to decide if 
-one is a permutation of the other.
-"""
-# Implementation 1
-# Runtime: If length of STR1 is A, and length of STR2 is B, and # of Unique CHARS is M: O(MAB)
-# Space Complexity: O(M)
-def isPermutation1(args):
-    str1, str2 = args
-    """Uses Hash Table to check character frequencies"""
-    chars1 = {}
-    for char in str1:
-        if (char in chars1.keys()):
-            chars1[char] += 1
-        else:
-            chars1[char] = 1
-    # print(chars1)
-    for char in str2:
-        if (char in chars1.keys()):
-            chars1[char] -= 1
-        else:
-            return False
-    # print(chars1)
-    if (sum(chars1.values()) == 0):
-        return True
-    else:
-        return False
-
-# print(isPermutation1('abcdee', 'cbeade'))
-# print(isPermutation1('apdsfinapsidfnaspoinfpaosinfopsin', 'aaaaddffffiiiiinnnnnooopppppsssss'))
-
-
-
-
-
-
