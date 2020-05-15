@@ -2,7 +2,7 @@
 1.3 Check Palindrome Permutation:
 Given a string, check if it is a permutation of a palindrome.
 """
-# Implementation 1 (naive)
+# Implementation 1 (Naive)
 # Description: If odd in length, check for pairs for all letters (except 1)
 # ... If even, check for pairs for all letters
 # Runtime: O(N)
