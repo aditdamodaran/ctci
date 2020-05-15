@@ -1,5 +1,6 @@
 from isUnique import *
 from checkPermutation import *
+from URLify import *
 
 # ADD FUNCTIONS, ARGUMENTS, AND EXPECTED OUTPUT BELOW
 # Format is a tuple (function, tests) where "tests" is a dictionary
@@ -37,6 +38,15 @@ testFunctions = [
             1: [('apdsfinapsidfnaspoinfpaosinfopsin', 'aaaaddffffiiiiinnnnnooopppppsssss'), True],
             2: [('nascar', 'racsna'), True],
             3: [('hamburger', 'hamburgular'), False]    
+        }
+    ),
+    (
+        URLify1, {
+            0: [('Mr John Smith    ', 13), 'Mr%20John%20Smith'],
+            1: [('   ', 1), '%20'],
+            2: [('      ', 2), '%20%20'],
+            3: [(' This tests another case        ', 24), '%20This%20tests%20another%20case'],
+            4: [(' this  is  a different  kind   of case                                 ', 41),'%20this%20%20is%20%20a%20different%20%20kind%20%20%20of%20case%20%20%20']
         }
     )
 ]
@@ -91,7 +101,7 @@ def testAll():
 def main():
     print("\n" + "-------------------------------------------------")
     # testAll()
-    testOne(isPermutation3)
+    testOne(URLify1)
     print("-------------------------------------------------" + "\n")
 
 main()
