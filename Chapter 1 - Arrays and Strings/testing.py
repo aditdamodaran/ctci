@@ -1,6 +1,7 @@
 from isUnique import *
 from checkPermutation import *
 from URLify import *
+from checkPalindromePermutation import *
 
 # ADD FUNCTIONS, ARGUMENTS, AND EXPECTED OUTPUT BELOW
 # Format is a tuple (function, tests) where "tests" is a dictionary
@@ -48,6 +49,19 @@ testFunctions = [
             3: [(' This tests another case        ', 24), '%20This%20tests%20another%20case'],
             4: [(' this  is  a different  kind   of case                                 ', 41),'%20this%20%20is%20%20a%20different%20%20kind%20%20%20of%20case%20%20%20']
         }
+    ),
+    (
+        checkPalindrome1, {
+            0: [(('Tact Coa')), True],
+            1: [('Hydeydh'), True],
+            2: [('Haisnfpaosin'), False],
+            3: [('a nasa at santa'), True],
+            4: [('racecars'), False],
+            5: [('racecar'), True],
+            6: [('daaaaadeeee'), True],
+            7: [('dad'), True],
+            8: [('dated'), False]
+        }
     )
 ]
 
@@ -62,6 +76,7 @@ def testingFramework(function, args, expected):
     if(function(args) == expected):
         return True
     else:
+        print("FAILED TEST: " + str(function.__name__) + " failed. with argument(s): " + str(args) + "\n \t\t Expected: " + str(expected) + ". Actual: " + str(function(args)))
         return False
 
 def testOne(fxn):
@@ -100,8 +115,8 @@ def testAll():
 
 def main():
     print("\n" + "-------------------------------------------------")
-    # testAll()
-    testOne(URLify1)
+    testAll()
+    # testOne(checkPalindrome1)
     print("-------------------------------------------------" + "\n")
 
 main()
