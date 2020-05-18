@@ -2,8 +2,10 @@
 1.4 One Away:
 Given two strings, check if str1 is "one edit" (insert, remove, or replace a char) or less away from str2 
 """
-
-
+# Implementation 1 
+# Description: Iterate through the short string, and try to insert or replace along the way
+# Runtime: O(N) (length of short string)
+# Space Complexity: O(1)
 def oneAway1(args):
     str1, str2 = args
 
