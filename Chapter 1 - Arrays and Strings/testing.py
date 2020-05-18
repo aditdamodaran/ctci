@@ -2,6 +2,7 @@ from isUnique import *
 from checkPermutation import *
 from URLify import *
 from checkPalindromePermutation import *
+from oneAway import *
 
 # ADD FUNCTIONS, ARGUMENTS, AND EXPECTED OUTPUT BELOW
 # Format is a tuple (function, tests) where "tests" is a dictionary
@@ -52,7 +53,7 @@ testFunctions = [
     ),
     (
         checkPalindrome1, {
-            0: [(('Tact Coa')), True],
+            0: [('Tact Coa'), True],
             1: [('Hydeydh'), True],
             2: [('Haisnfpaosin'), False],
             3: [('a nasa at santa'), True],
@@ -62,7 +63,28 @@ testFunctions = [
             7: [('dad'), True],
             8: [('dated'), False]
         }
-    )
+    ), 
+    (
+        oneAway1, {
+            0: [('pale','ple'), True],
+            1: [('pales','pale'), True],
+            2: [('pale','bale'), True],
+            3: [('pale','bake'), False],
+            4: [('hello','hells'), True],
+            5: [('hello','ello'), True],
+            6: [('hello','henlo'), True],
+            7: [('hello','ellis'), False],
+            8: [('hello','ells'), False],
+            9: [('a','b'), True],
+            10: [('','d'), True],
+            11: [('d','de'), True],
+            12: [('pale','pse'), False],
+            13: [('pkle','pable'), False],
+            14: [('pal','palks'), False],
+            15: [('palks','pal'), False],
+            16: [('hello', 'ollehs'), False]
+        }
+    ), 
 ]
 
 def printTest(test):
@@ -73,10 +95,13 @@ def printTest(test):
 
 def testingFramework(function, args, expected):
     # Checks if unit test passed
-    if(function(args) == expected):
+    result = function(args)
+    if(result == expected):
+        # UNCOMMENT FOR DEBUGGING
+        # print("PASSED TEST: " + str(function.__name__) + " passed. with argument(s): " + str(args) + "\n \t\t Expected: " + str(expected) + ". Actual: " + str(result))
         return True
     else:
-        print("FAILED TEST: " + str(function.__name__) + " failed. with argument(s): " + str(args) + "\n \t\t Expected: " + str(expected) + ". Actual: " + str(function(args)))
+        print("FAILED TEST: " + str(function.__name__) + " failed. with argument(s): " + str(args) + "\n \t\t Expected: " + str(expected) + ". Actual: " + str(result))
         return False
 
 def testOne(fxn):
@@ -93,9 +118,8 @@ def testOne(fxn):
                 if (result):
                     testsPassed += 1
                 else: 
-                    testsFailed += 1      
+                    testsFailed += 1     
             printTest([str(function.__name__), (testsPassed, testsFailed)])
-
 
 def testAll():
     for i, testFunction in enumerate(testFunctions):
