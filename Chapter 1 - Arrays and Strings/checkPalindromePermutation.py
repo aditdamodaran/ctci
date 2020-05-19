@@ -1,5 +1,5 @@
 """
-1.3 Check Palindrome Permutation:
+1.4 Check Palindrome Permutation:
 Given a string, check if it is a permutation of a palindrome.
 """
 # Implementation 1 (Naive)

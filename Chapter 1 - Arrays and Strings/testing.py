@@ -3,6 +3,7 @@ from checkPermutation import *
 from URLify import *
 from checkPalindromePermutation import *
 from oneAway import *
+from stringCompression import *
 
 # ADD FUNCTIONS, ARGUMENTS, AND EXPECTED OUTPUT BELOW
 # Format is a tuple (function, tests) where "tests" is a dictionary
@@ -84,7 +85,16 @@ testFunctions = [
             15: [('palks','pal'), False],
             16: [('hello', 'ollehs'), False]
         }
-    ), 
+    ),
+    (
+        stringCompression1, {
+            0: [('aabcccccaaa'), 'a2b1c5a3'],
+            1: [('aa'), 'aa'],
+            2: [('cCdD'), 'cCdD'],
+            3: [('aaFFeRiJKllllllllmnooooooooo'), 'a2F2e1R1i1J1K1l8m1n1o9'],
+            4: [('aaa'), 'a3']
+        }
+    )
 ]
 
 def printTest(test):

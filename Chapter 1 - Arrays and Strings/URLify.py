@@ -1,6 +1,6 @@
 """
 1.3 URLify: 
-Write a method to replce all spaces in a string with '%20'. 
+Write a method to replace all spaces in a string with '%20'. 
 String has sufficient space @ end to hold additional characters (no memory alloc required).
 i.e. "Mr. John Smith    " would have 4 spaces at the end.
 You are given the "true" length of the original string (i.e. 13 for the above example).  
