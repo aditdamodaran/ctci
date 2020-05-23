@@ -4,7 +4,6 @@ from math import floor
 1.7 Rotate Matrix:
 Given a NxN matrix, "rotate it" 90 degrees in place.
 """
-
 # HELPER FUNCTIONS FOR EASE OF TESTING AND VISUALIZATION
 def printMatrix(m):
     print('\n')
@@ -24,8 +23,7 @@ def createMatrix(N):
         matrix.append(row)
     return matrix
 
-
-# Implementation 1 
+# Implementation 1 (InPlace)
 # Description: Explanation Link: https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
 # Runtime: O(N^2)
 # Space Complexity: O(1)
