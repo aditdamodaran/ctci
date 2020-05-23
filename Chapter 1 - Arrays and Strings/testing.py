@@ -4,6 +4,7 @@ from URLify import *
 from checkPalindromePermutation import *
 from oneAway import *
 from stringCompression import *
+from stringRotation import *
 
 # ADD FUNCTIONS, ARGUMENTS, AND EXPECTED OUTPUT BELOW
 # Format is a tuple (function, tests) where "tests" is a dictionary
@@ -93,6 +94,13 @@ testFunctions = [
             2: [('cCdD'), 'cCdD'],
             3: [('aaFFeRiJKllllllllmnooooooooo'), 'a2F2e1R1i1J1K1l8m1n1o9'],
             4: [('aaa'), 'a3']
+        }
+    ),
+    (
+        stringRotation1, {
+            0: [('waterbottle','erbottlewat'), True],
+            1: [('foo','bar'), False],
+            2: [('foo','foofoo'), False]
         }
     )
 ]
